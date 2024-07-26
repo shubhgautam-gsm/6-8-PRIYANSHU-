@@ -1,0 +1,7 @@
+t = (2,'hi','python',6)
+print(t[4:])
+print(t[2])
+print(t[1*2])
+print(t[0+3])
+print(t[1]+t[2])
+print(t[0]+t[3])

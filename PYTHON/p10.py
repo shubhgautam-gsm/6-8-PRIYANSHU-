@@ -1,0 +1,7 @@
+#Tuples ()
+t = (1, "hi", "python", 2)
+print (t[3:])
+print (t[1:2])
+print (t)
+print (t + t)
+print (t * 3)

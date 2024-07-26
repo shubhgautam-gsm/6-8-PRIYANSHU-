@@ -1,0 +1,5 @@
+l=(2,'hello','java',5)
+print(l[2:])
+print(l[1])
+print([1+3])
+print([1*2])
