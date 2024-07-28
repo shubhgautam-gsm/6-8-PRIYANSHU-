@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            height: 100px;
+            width: 100px;
+            background-color: rgb(17, 84, 106);
+            animation-name: colorchg;
+            animation-duration: 2s;
+            animation-delay: 1s;
+            animation-iteration-count: 3;
+            border-radius: 50%;
+            text-align: center;
+            position: relative;
+           
+        }
+
+        @keyframes colorchg {
+            0%{
+                top:0px;
+                left:0px;
+                background-image:url(../../../9-11-batch-2024/images/faceonmoon.jpeg)
+            }
+            25%{
+                top:0px;
+                left:100px;
+                background-image:url(../../../9-11-batch-2024/images/items.jpg)
+            }
+            50%{
+                top:50px;
+                left:100px;
+                background-image:url(../../../9-11-batch-2024/images/faceonmoon.jpeg)
+            }
+            75%{
+                top:50px;
+                left:0px;
+                background-image:url(../../../9-11-batch-2024/images/profile-12.jpg)
+            }
+            100%{
+                top:0px;
+                left:0px;
+                background-color: rgb(137, 13, 13);
+                background-image:url(../../../9-11-batch-2024/images/profile-2.jpg)
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>
