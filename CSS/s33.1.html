@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #g1{
+            width: 500px;
+            height: 300px; /* height not work because body height is 0% */
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="g1">ssss</div>
+</body>
+<script>
+    function getRandomColor() {
+        return Math.floor(Math.random() * 256);
+    }
+
+    let r1 = getRandomColor();
+    let g1 = getRandomColor();
+    let b1 = getRandomColor();
+    let r2 = getRandomColor();
+    let g2 = getRandomColor();
+    let b2 = getRandomColor();
+
+    document.getElementById("g1").style.background = 
+        `rgb(${r1}, ${g1}, ${b1})`;
+</script>
+</html>
