@@ -1,0 +1,242 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 134217728 bytes. Error detail: G1 virtual space
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   This process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Unscaled Compressed Oops mode in which the Java heap is
+#     placed in the first 4GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_windows.cpp:3631), pid=3184, tid=15276
+#
+# JRE version:  (22.0.2+9) (build )
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (22.0.2+9-70, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Dfile.encoding=UTF-8 -agentlib:jdwp=transport=dt_socket,address=65423,server=n --add-modules=ALL-DEFAULT jdk.compiler/com.sun.tools.javac.launcher.SourceLauncher D:\6-8-PRIYANSHU-\JAVA\myapp\src\ColorCheckboxes.java
+
+Host: Intel(R) Core(TM) i5-4310U CPU @ 2.00GHz, 4 cores, 7G,  Windows 11 , 64 bit Build 22621 (10.0.22621.3958)
+Time: Thu Sep 19 19:28:10 2024 India Standard Time elapsed time: 0.039023 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000014e9249e3a0):  JavaThread "Unknown thread" [_thread_in_vm, id=15276, stack(0x000000431f400000,0x000000431f500000) (1024K)]
+
+Stack: [0x000000431f400000,0x000000431f500000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x6e26e9]  (no source info available)
+V  [jvm.dll+0x875753]  (no source info available)
+V  [jvm.dll+0x877b7e]  (no source info available)
+V  [jvm.dll+0x878253]  (no source info available)
+V  [jvm.dll+0x27fc86]  (no source info available)
+V  [jvm.dll+0x6ded85]  (no source info available)
+V  [jvm.dll+0x6d388a]  (no source info available)
+V  [jvm.dll+0x358b8a]  (no source info available)
+V  [jvm.dll+0x3610b6]  (no source info available)
+V  [jvm.dll+0x3b419e]  (no source info available)
+V  [jvm.dll+0x3b4448]  (no source info available)
+V  [jvm.dll+0x32c5ec]  (no source info available)
+V  [jvm.dll+0x32d258]  (no source info available)
+V  [jvm.dll+0x83d5ac]  (no source info available)
+V  [jvm.dll+0x3c10d1]  (no source info available)
+V  [jvm.dll+0x8264cc]  (no source info available)
+V  [jvm.dll+0x45bd5e]  (no source info available)
+V  [jvm.dll+0x45dbe1]  (no source info available)
+C  [jli.dll+0x52a3]  (no source info available)
+C  [ucrtbase.dll+0x29333]  (no source info available)
+C  [KERNEL32.DLL+0x1257d]  (no source info available)
+C  [ntdll.dll+0x5af28]  (no source info available)
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007ff8ff58c1c8, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+Total: 0
+
+Other Threads:
+  0x0000014e94704af0 WorkerThread "GC Thread#0"                     [id=10368, stack(0x000000431f500000,0x000000431f600000) (1024K)]
+  0x0000014e947159e0 ConcurrentGCThread "G1 Main Marker"            [id=14720, stack(0x000000431f600000,0x000000431f700000) (1024K)]
+  0x0000014e94717ca0 WorkerThread "G1 Conc#0"                       [id=20424, stack(0x000000431f700000,0x000000431f800000) (1024K)]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ff8fecdf517]
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00007ff8ff60cc80] Heap_lock - owner thread: 0x0000014e9249e3a0
+
+Heap address: 0x0000000081c00000, size: 2020 MB, Compressed Oops mode: 32-bit
+
+CDS archive(s) mapped at: [0x0000000000000000-0x0000000000000000-0x0000000000000000), size 0, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 1.
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0x0
+
+GC Precious Log:
+ CardTable entry size: 512
+ Card Set container configuration: InlinePtr #cards 5 size 8 Array Of Cards #cards 12 size 40 Howl #buckets 4 coarsen threshold 1843 Howl Bitmap #cards 512 size 80 coarsen threshold 460 Card regions per heap region 1 cards per card region 2048
+
+Heap:
+ garbage-first heap   total reserved 2068480K, committed 0K, used 0K [0x0000000081c00000, 0x0000000100000000)
+  region size 1024K, 0 young (0K), 0 survivors (0K)
+
+[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ff8ff0de869]
+GC Heap History (0 events):
+No events
+
+Dll operation events (1 events):
+Event: 0.028 Loaded shared library D:\jdk-22.0.2\bin\java.dll
+
+Deoptimization events (0 events):
+No events
+
+Classes loaded (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+ZGC Phase Switch (0 events):
+No events
+
+VM Operations (0 events):
+No events
+
+Memory protections (0 events):
+No events
+
+Nmethod flushes (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+0x00007ff69b940000 - 0x00007ff69b950000 	D:\jdk-22.0.2\bin\java.exe
+0x00007ff9a3550000 - 0x00007ff9a3767000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ff975dd0000 - 0x00007ff975dea000 	C:\Program Files\Avast Software\Avast\aswhook.dll
+0x00007ff9a26d0000 - 0x00007ff9a2794000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ff9a0ed0000 - 0x00007ff9a127d000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ff9a0db0000 - 0x00007ff9a0ec1000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ff97baa0000 - 0x00007ff97bab7000 	D:\jdk-22.0.2\bin\jli.dll
+0x00007ff99c1f0000 - 0x00007ff99c20b000 	D:\jdk-22.0.2\bin\VCRUNTIME140.dll
+0x00007ff9a2110000 - 0x00007ff9a22be000 	C:\WINDOWS\System32\USER32.dll
+0x00007ff9a0a10000 - 0x00007ff9a0a36000 	C:\WINDOWS\System32\win32u.dll
+0x00007ff9a20e0000 - 0x00007ff9a2109000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ff99fab0000 - 0x00007ff99fd43000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.3672_none_2713b9d173822955\COMCTL32.dll
+0x00007ff9a2860000 - 0x00007ff9a2907000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ff9a08f0000 - 0x00007ff9a0a09000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ff9a0a70000 - 0x00007ff9a0b0a000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ff9a2c50000 - 0x00007ff9a2c81000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007ff99c4a0000 - 0x00007ff99c4ac000 	D:\jdk-22.0.2\bin\vcruntime140_1.dll
+0x00007ff979fc0000 - 0x00007ff97a04e000 	D:\jdk-22.0.2\bin\msvcp140.dll
+0x00007ff8fe9a0000 - 0x00007ff8ff6e9000 	D:\jdk-22.0.2\bin\server\jvm.dll
+0x00007ff9a3270000 - 0x00007ff9a3322000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ff9a27a0000 - 0x00007ff9a2849000 	C:\WINDOWS\System32\sechost.dll
+0x00007ff9a0a40000 - 0x00007ff9a0a68000 	C:\WINDOWS\System32\bcrypt.dll
+0x00007ff9a2ad0000 - 0x00007ff9a2be4000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ff9a1400000 - 0x00007ff9a1471000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ff9a0180000 - 0x00007ff9a01cd000 	C:\WINDOWS\SYSTEM32\POWRPROF.dll
+0x00007ff990fc0000 - 0x00007ff990fca000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ff99a950000 - 0x00007ff99a984000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ff99fe70000 - 0x00007ff99fe83000 	C:\WINDOWS\SYSTEM32\UMPDC.dll
+0x00007ff99f250000 - 0x00007ff99f268000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ff99c1e0000 - 0x00007ff99c1ea000 	D:\jdk-22.0.2\bin\jimage.dll
+0x00007ff9a01d0000 - 0x00007ff9a0402000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007ff9a1cf0000 - 0x00007ff9a207e000 	C:\WINDOWS\System32\combase.dll
+0x00007ff9a3430000 - 0x00007ff9a3507000 	C:\WINDOWS\System32\OLEAUT32.dll
+0x00007ff9a0070000 - 0x00007ff9a00a2000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
+0x00007ff9a0870000 - 0x00007ff9a08eb000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ff973d30000 - 0x00007ff973d6c000 	D:\jdk-22.0.2\bin\jdwp.dll
+0x00007ff99c1b0000 - 0x00007ff99c1ce000 	D:\jdk-22.0.2\bin\java.dll
+0x00007ff9a1480000 - 0x00007ff9a1ce7000 	C:\WINDOWS\System32\SHELL32.dll
+0x00007ff9a2910000 - 0x00007ff9a2ab5000 	C:\WINDOWS\System32\ole32.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;D:\jdk-22.0.2\bin;C:\WINDOWS\SYSTEM32;C:\Program Files\Avast Software\Avast;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.3672_none_2713b9d173822955;D:\jdk-22.0.2\bin\server
+
+VM Arguments:
+jvm_args: -Dfile.encoding=UTF-8 -agentlib:jdwp=transport=dt_socket,address=65423,server=n --add-modules=ALL-DEFAULT 
+java_command: jdk.compiler/com.sun.tools.javac.launcher.SourceLauncher D:\6-8-PRIYANSHU-\JAVA\myapp\src\ColorCheckboxes.java
+java_class_path (initial): .
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 3                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 1                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 4                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 1048576                                   {product} {ergonomic}
+   size_t InitialHeapSize                          = 134217728                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 2118123520                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 1048576                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5832780                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122912730                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122912730                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+   size_t SoftMaxHeapSize                          = 2118123520                             {manageable} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags foldmultilines=false
+ #1: stderr all=off uptime,level,tags foldmultilines=false
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk-22
+PATH=C:\Users\shubh\AppData\Local\Programs\Python\Launcher\;C:\Users\shubh\AppData\Local\Microsoft\WindowsApps;C:\Users\shubh\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\shubh\AppData\Local\GitHubDesktop\bin
+USERNAME=shubh
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 69 Stepping 1, GenuineIntel
+TMP=C:\Users\shubh\AppData\Local\Temp
+TEMP=C:\Users\shubh\AppData\Local\Temp
+
+
+
+
+Periodic native trim disabled
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 11 , 64 bit Build 22621 (10.0.22621.3958)
+OS uptime: 0 days 1:21 hours
+
+CPU: total 4 (initial active 4) (2 cores per cpu, 2 threads per core) family 6 model 69 stepping 1 microcode 0x26, cx8, cmov, fxsr, ht, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, avx, avx2, aes, erms, clmul, bmi1, bmi2, fma, vzeroupper, clflush, rdtscp, f16c
+Processor Information for all 4 processors :
+  Max Mhz: 2601, Current Mhz: 2601, Mhz Limit: 2601
+
+Memory: 4k page, system-wide physical 8073M (1094M free)
+TotalPageFile size 10513M (AvailPageFile size 114M)
+current process WorkingSet (physical memory assigned to process): 12M, peak: 12M
+current process commit charge ("private bytes"): 52M, peak: 180M
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (22.0.2+9-70) for windows-amd64 JRE (22.0.2+9-70), built on 2024-06-04T16:52:23Z by "mach5one" with MS VC++ 17.6 (VS2022)
+
+END.
